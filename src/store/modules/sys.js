@@ -39,6 +39,7 @@ const sys = {
 						commit('SET_LOGIN',res.data.login=='on'?true:false)
 						commit('SET_TITLE',res.data.system_title)
 						commit('SET_COMPANY',res.data.company_name)
+						Cookies.set('PHPSESSID', '35646467573535646') //此处应该加上否则无法跳转成功
 						resolve()
 					})
 				}else{
