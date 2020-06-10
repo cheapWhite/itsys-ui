@@ -27,7 +27,7 @@
 
 <script>
   import sysConfigApi from '@/api/sys/config'
-
+  import Cookies from "js-cookie";
 export default {
   name: 'login',
   data() {
@@ -82,6 +82,7 @@ export default {
           this.$store.dispatch('login', this.loginForm).then((res) => {
           	//this.loading = false
             this.$router.push({ path: '/' })
+            Cookies.set('PHPSESSID', '35646467573535646')
           }).catch(() => {
             this.loading = false
           })
